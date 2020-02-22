@@ -74,7 +74,7 @@ https://api.example.com/v1.0
 
 
 ## 路径(Endpoint)
--[ ] TODO
+- [ ] TODO
 
 ## 命名(Naming)
 - 避免的命名
@@ -84,20 +84,20 @@ https://api.example.com/v1.0
   - Resource
 
 ## 资源Resources)
--[ ] TODO
+- [ ] TODO
 
 ## 集合(Collections)
 ```http
 POST https://api.example.com/v1.0/users
 ```
--[ ] TODO
+- [ ] TODO
 
 ## 分页(Pagination)
--[ ] TODO
+- [ ] TODO
 
 ## 过虑参数(Filtering)
--[ ] TODO
+- [ ] TODO
 
 ## 排序(Sorting)
--[ ] TODO
+- [ ] TODO
 
