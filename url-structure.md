@@ -4,11 +4,15 @@
 API与用户的通信协议，总是使用HTTPs协议。
 
 ## 域名(Domain)
+```http
 - https://api.example.com
+```
 
 ## 版本(Versioning)
+```http
 - https://api.example.com/v1
 - https://api.example.com/v1.0
+```
 
 ## 请求方法(Request Verb)
 - 如果请求头中存在 `X-HTTP-Method-Override` 或参数中存在 `_method`（拥有更高权重），且值为 `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS`, `HEAD` 之一，则视作相应的请求方式进行处理。
