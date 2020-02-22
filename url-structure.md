@@ -31,14 +31,14 @@ API与用户的通信协议，总是使用HTTPs协议。
   - 完成请求后返回状态码 `200 OK`
   - 完成请求后需要返回被请求的资源详细信息
   ```http
-  	GET https://api.example.com/v1.0/products/123
+  GET https://api.example.com/v1.0/products/123
   ````
 
 - **POST** 用于创建新资源
   - 创建完成后返回状态码 `201 Created`
   - 完成请求后需要返回被创建的资源详细信息
   ```http
-  	POST https://api.example.com/v1.0/products
+  POST https://api.example.com/v1.0/products
   ````
 
 - **PUT** 用于完整的替换资源或者创建指定身份的资源，比如创建 id 为 123 的某个资源
@@ -46,26 +46,26 @@ API与用户的通信协议，总是使用HTTPs协议。
   - 如果是替换了资源，则返回 `200 OK`
   - 完成请求后需要返回被修改的资源详细信息
   ```http
-  	PUT https://api.example.com/v1.0/products/123
+  PUT https://api.example.com/v1.0/products/123
   ````
 
 - **PATCH** 用于局部更新资源
   - 完成请求后返回状态码 `200 OK`
   - 完成请求后需要返回被修改的资源详细信息
   ```http
-  	PATCH https://api.example.com/v1.0/products/123
+  PATCH https://api.example.com/v1.0/products/123
   ````
 
 - **DELETE** 用于删除某个资源
   - 完成请求后返回状态码 `204 No Content`
   ```http
-  	DELETE https://api.example.com/v1.0/products/123
+  DELETE https://api.example.com/v1.0/products/123
   ````
 
 ## 头部(Headers)
 - **Accept**: 服务器需要返回什么样的 `Content`。如果客户端要求返回 `application/xml`，服务器端只能返回 `application/json`，那么最好返回status code 406 not acceptable（RFC2616），当然，返回 `application/json` 也并不违背 `RFC` 的定义。一个合格的REST API需要根据 `Accept` 头来灵活返回合适的数据。为了避免API的变动导致用户使用中产生意外结果或调用失败，最好强制要求所有访问都需要指定版本号。请避免提供默认版本号，一旦提供，日后想要修改它会相当困难。最适合放置版本号的位置是头信息(HTTP Headers)，在 Accept 段中使用自定义类型(content type)与其他元数据(metadata)一起提交。例如:
   ```http
-  	Accept: application/vnd.heroku+json; version=2
+  Accept: application/vnd.heroku+json; version=2
   ```
 
 - **If-Modified-Since/If-None-Match**: 如果客户端提供某个条件，那么当这条件满足时，才返回数据，否则返回 `304 Not Modified` 。比如客户端已经缓存了某个数据，它只是想看看有没有新的数据时，会用这两个header之一，服务器如果不理不睬，依旧做足全套功课返回 `200 OK` ，那就既不专业，也不高效。
