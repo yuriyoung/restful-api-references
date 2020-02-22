@@ -5,13 +5,13 @@ API与用户的通信协议，总是使用HTTPs协议。
 
 ## 域名(Domain)
 ```http
-- https://api.example.com
+https://api.example.com
 ```
 
 ## 版本(Versioning)
 ```http
-- https://api.example.com/v1
-- https://api.example.com/v1.0
+https://api.example.com/v1
+https://api.example.com/v1.0
 ```
 
 ## 请求方法(Request Verb)
@@ -74,7 +74,7 @@ API与用户的通信协议，总是使用HTTPs协议。
 
 
 ## 路径(Endpoint)
-[ ] TODO
+-[ ] TODO
 
 ## 命名(Naming)
 - 避免的命名
@@ -83,21 +83,21 @@ API与用户的通信协议，总是使用HTTPs协议。
   - Scope
   - Resource
 
-## 资源Resource)
-[ ] TODO
+## 资源Resources)
+-[ ] TODO
 
 ## 集合(Collections)
 ```http
 POST https://api.example.com/v1.0/users
 ```
-[ ] TODO
+-[ ] TODO
 
 ## 分页(Pagination)
-[ ] TODO
+-[ ] TODO
 
 ## 过虑参数(Filtering)
-[ ] TODO
+-[ ] TODO
 
 ## 排序(Sorting)
-[ ] TODO
+-[ ] TODO
 
