@@ -72,7 +72,7 @@
 | 410   | Gone | 客户端请求的资源已经不存在。返回该状态码，表明请求的资源已被永久删除。 |
 | 411   | Length Required	 |服务器无法处理客户端发送的不带Content-Length的请求信息。 |
 | 412   | Precondition Failed | 未满足前提条件，服务器未满足请求者在请求中设置的其中一个前提条件。 |
-| 413   | Request Entity Too Large | e	由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息。 |
+| 413   | Request Entity Too Large | 由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息。 |
 | 414   | Request-URI Too Large | 请求的URI过长（URI通常为网址），服务器无法处理。 |
 | 415   | Unsupported Media Type | 服务器无法处理请求附带的媒体格式。 |
 | 416   | Requested range not satisfiable | 客户端请求的范围无效。 |
