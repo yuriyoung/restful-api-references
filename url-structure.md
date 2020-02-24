@@ -4,12 +4,18 @@
 API与用户的通信协议，总是使用HTTPs协议。
 
 ## 域名(Domain)
+> 推荐将`api`放在子域名下。
+
 ```http
+https://www.example.com/api
 https://api.example.com
 ```
 
 ## 版本(Versioning)
 ```http
+https://www.example.com/api/v1
+https://www.example.com/api/v1.0
+
 https://api.example.com/v1
 https://api.example.com/v1.0
 ```
@@ -31,14 +37,14 @@ https://api.example.com/v1.0
   - 完成请求后返回状态码 `200 OK`
   - 完成请求后需要返回被请求的资源详细信息
   ```http
-  GET https://api.example.com/v1.0/products/123
+  GET https://api.example.com/v1/products/123
   ````
 
 - **POST** 用于创建新资源
   - 创建完成后返回状态码 `201 Created`
   - 完成请求后需要返回被创建的资源详细信息
   ```http
-  POST https://api.example.com/v1.0/products
+  POST https://api.example.com/v1/products
   ````
 
 - **PUT** 用于完整的替换资源或者创建指定身份的资源，比如创建 id 为 123 的某个资源
@@ -46,20 +52,20 @@ https://api.example.com/v1.0
   - 如果是替换了资源，则返回 `200 OK`
   - 完成请求后需要返回被修改的资源详细信息
   ```http
-  PUT https://api.example.com/v1.0/products/123
+  PUT https://api.example.com/v1/products/123
   ````
 
 - **PATCH** 用于局部更新资源
   - 完成请求后返回状态码 `200 OK`
   - 完成请求后需要返回被修改的资源详细信息
   ```http
-  PATCH https://api.example.com/v1.0/products/123
+  PATCH https://api.example.com/v1/products/123
   ````
 
 - **DELETE** 用于删除某个资源
   - 完成请求后返回状态码 `204 No Content`
   ```http
-  DELETE https://api.example.com/v1.0/products/123
+  DELETE https://api.example.com/v1/products/123
   ````
 
 ## 头部(Headers)
@@ -73,8 +79,13 @@ https://api.example.com/v1.0
 - **If-Match**: 在对某个资源做 `PUT/PATCH/DELETE` 操作时，服务器应该要求客户端提供 `If-Match` 头，只有客户端提供的 `Etag` 与服务器对应资源的 `Etag` 一致，才进行操作，否则返回 `412 Precondition Failed` 。在所有返回的响应中包含ETag头信息，用来标识资源的版本。这让用户对资源进行缓存处理成为可能，在后续的访问请求中把 `If-None-Match` 头信息设置为之前得到的ETag值，就可以侦测到已缓存的资源是否需要更新。
 
 
-## 路径(Endpoint)
-- [ ] TODO
+## 路径/端点(Endpoint)
+```http
+https://api.example.com/v1/zoos
+https://api.example.com/v1/animals
+https://api.example.com/v1/animal_types
+https://api.example.com/v1/employees
+```
 
 ## 命名(Naming)
 - 避免的命名
@@ -95,7 +106,7 @@ POST https://api.example.com/v1.0/users
 ## 分页(Pagination)
 - [ ] TODO
 
-## 过虑参数(Filtering)
+## 过虑(Filtering)
 - [ ] TODO
 
 ## 排序(Sorting)
